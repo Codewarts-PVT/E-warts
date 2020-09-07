@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script type="text/javascript"> 
+      window.history.forward(); 
+      function noBack() { 
+          window.history.forward(); 
+      } 
+  </script>  -->
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <script src="sweetalert-master/src/sweetalert.js"></script>
+  <link rel="stylesheet" href="sweetalert-master/src/sweetalert.css">
+    <title>Codewarts Login</title>
+    <link rel = "icon" href = "img/Logo.png" 
+        type = "image/x-icon">  
+  </head>
+  <body>
+    <div class="container">
+      <div class="forms-container" id="login_div">
+        <div class="signin-signup" >
+          <form action="#" class="sign-in-form">
+            <img src="img/Logo.png" width="100" height="100">
+            <h2 class="title">Codewarts</h2>
+            <h2 class="title">Welcome User!</h2>
+            <!-- <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="email" placeholder="Email" id="email_field" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" id="password_field" />
+            </div> -->
+            
+            <button class="btn" onclick="logout()" data-modal-target="#modal">Logout</button>
+           <!-- <p class="social-text">Or Sign in with social platforms</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>-->
+            <div class="social-media">
+              <a href="forgot.html">
+                <p>Forgot password</p>
+              </a>
+            </div>
+          </form>
+          <form action="#" class="sign-up-form">
+            <img src="img/Logo.png" width="100" height="100">
+            <h2 class="title">Codewarts</h2>
+            <h2 class="title">Register</h2>
+            <div class="input-field">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" id="user" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Email"  id="email" />
+            </div>
+            <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password" id="password" />
+            </div>
+
+            <button class="btn" id="myModal" onclick="RegisterUser()" data-modal-target="#modal" >Register</button>
+          
+           <!-- <p class="social-text">Or Sign up with social platforms</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>-->
+          </form>
+        </div>
+      </div>
+      
+      <div class="panels-container">
+        <div class="panel left-panel">
+          <div class="content">
+            <h3>New here ?</h3>
+            <p>
+              Awesome, No problem register and join our family!
+            </p>
+            <button class="btn transparent" id="sign-up-btn">
+              Register
+            </button>
+          </div>
+          <img src="img/log.svg" class="image" alt="" />
+        </div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>One of us ?</h3>
+            <p>
+              Great you are one of with us! Login!!
+            </p>
+            <button class="btn transparent" id="sign-in-btn">
+              Login
+            </button>
+          </div>
+          <img src="img/register.svg" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+
+    
+    <div id="user_div" class="loggedin-div">
+      <div class="modal" id="modal">
+        <div class="modal-header">
+          <div class="title">Example Modal</div>
+          <!-- <button data-close-button class="close-button">&times;</button> -->
+        </div>
+        <div class="modal-body">
+          <br>
+          <br>
+          <br>
+          <p >&#128525;Congrats! you have logged in!&#128525;</p>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <p>Welcome Learner!</p>
+          <div class="center1">
+            <a href="index1.html">
+              <button class="btn">okay!</button></div>
+            </a>
+        </div>
+      </div>
+      <div id="overlay"></div>
+       <div class="center1">
+<!--         
+        <a href="https://unruffled-bassi-c34208.netlify.app/">
+          <button class="btn" >Click here for home</button>
+        </a>
+        <h3 >Welcome User!!</h3> -->
+        <button class="btn" onclick="logout()" >Logout</button>
+   
+    </div>  
+    </div>
+    
+
+    
+
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var firebaseConfig = {
+      apiKey: "AIzaSyA0hTaMVG7oFH-AUYU_W9R1TeW7_GSvlI4",
+      authDomain: "codewarts-946f2.firebaseapp.com",
+      databaseURL: "https://codewarts-946f2.firebaseio.com",
+      projectId: "codewarts-946f2",
+      storageBucket: "codewarts-946f2.appspot.com",
+      messagingSenderId: "322646567170",
+      appId: "1:322646567170:web:7e6d50b7761540edad3a1b",
+      measurementId: "G-8YJBCD8HST"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="index.js"></script>
+    <script src="app.js"></script>
+
+    
+  
+  </body>
+</html>
